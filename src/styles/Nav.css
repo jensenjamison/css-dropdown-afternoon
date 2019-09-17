@@ -1,0 +1,52 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .start-bootstrap {
+    font-size: 30px;
+    font-family: 'Yellowtail', cursive;
+    color: rgb(236, 201, 0)
+  }
+
+  .nav-buttons-1 {
+    display: flex;
+    justify-content: space-around;
+    width: 45vw;
+    color: white;
+    
+  }
+
+  .burger-button {
+    display: none;
+  }
+
+  .side-menu {
+      background-color: rgb(48, 48, 48);
+      color: white;
+      height: 270px;
+      width: 184px;
+  }
+
+  .drop-down {
+      display: flex;
+      justify-content: flex-end; 
+  }
+
+  .burger-button-1 {
+    width: 70px;
+    height: 70px;
+    filter: invert(1);
+  }
+
+  @media (max-width: 1023px ) {
+    .nav-buttons-1 {
+        display: none;
+    }
+    .burger-button {
+        display: block;
+    }
+}
+
+
