@@ -22,11 +22,16 @@
     display: none;
   }
 
-  .side-menu {
+  .side-menu, .side-menu-close {
+    display: none;
+}
+
+  .side-menu-open {
       background-color: rgb(48, 48, 48);
       color: white;
       height: 270px;
       width: 184px;
+      position: absolute;
   }
 
   .drop-down {

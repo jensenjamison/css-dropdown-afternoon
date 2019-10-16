@@ -1,9 +1,31 @@
 import React from "react"
 import "../styles/Nav.css"
 
-export default function Nav(props){
-    return(
-        <> 
+export default class Nav extends React.Component {
+    constructor(){
+        super()
+        this.state={
+            menuStatus: "side-menu-close",
+            buttonStatus: ""
+        }
+    }
+
+    handleClick=()=>{
+        if (this.state.menuStatus === "side-menu-close"){
+            this.setState({
+                menuStatus: "side-menu-open", buttonStatus: "side-menu-open"
+            })
+        } else {
+            this.setState({
+                menuStatus: "side-menu-close", buttonStatus: "side-menu-close"
+            })
+        }  
+    }
+
+    render(){
+
+        return(
+            <> 
 
         <nav className="nav-bar">
             <div>
@@ -19,13 +41,12 @@ export default function Nav(props){
                 <h4>CONTACT</h4>
             </div>
                 <div className="burger-button">
-                    <img className="burger-button-1" src="https://static.thenounproject.com/png/703781-200.png"></img>
-
+                    <img className="burger-button-1" src="https://static.thenounproject.com/png/703781-200.png" onClick={this.handleClick}></img>
                 </div>
             </div>
         </nav>
         <section className="drop-down">
-            <div className="side-menu">
+            <div className={this.state.menuStatus}>
                 <h2>SERVICES</h2>
                 <h2>PORTFOLIO</h2>
                 <h2>ABOUT</h2>
@@ -36,4 +57,5 @@ export default function Nav(props){
         </section>
         </>
     )
+}
 }
